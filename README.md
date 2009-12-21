@@ -12,20 +12,20 @@ I'm not sure I did everything right, but it seems to work (which is a good thing
 
 Usage
 -----
-python sendmail.py [options] contents.txt to-person [to-person...]
+		python sendmail.py [options] contents.txt to-person [to-person...]
 
-Options:
-  -h, --help            show this help message and exit
-  -s SUBJECT, --subject=SUBJECT
-                        Specifies the subject for the sent mail
-  -b BCC, --bcc=BCC     Specifies an address to Bcc:. Can be specified more
-                        than once.
-  -a ATTACH, --attach=ATTACH
-                        Specifies an attachment to be attached. Can be
-                        specified more than once.
-  -f FROM_ADDR, --from=FROM_ADDR
-                        Specifies who the email is from. Defaults:
-                        alex@tpsitulsa.com
-  --headers=HEADERS     Specifies a file containing a list of headers.
-  --host=HOST           Specifies what SMTP server to use. Default: localhost
-  --html=HTML           Specifies an HTML message to send along with the text.
+		Options:
+		  -h, --help            show this help message and exit
+		  -s SUBJECT, --subject=SUBJECT
+		                        Specifies the subject for the sent mail
+		  -b BCC, --bcc=BCC     Specifies an address to Bcc:. Can be specified more
+		                        than once.
+		  -a ATTACH, --attach=ATTACH
+		                        Specifies an attachment to be attached. Can be
+		                        specified more than once.
+		  -f FROM_ADDR, --from=FROM_ADDR
+		                        Specifies who the email is from. Defaults:
+		                        alex@tpsitulsa.com
+		  --headers=HEADERS     Specifies a file containing a list of headers.
+		  --host=HOST           Specifies what SMTP server to use. Default: localhost
+		  --html=HTML           Specifies an HTML message to send along with the text.
