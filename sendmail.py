@@ -38,7 +38,16 @@ parser.add_option(
 	help="Specifies a file containing a list of headers."
 )
 parser.add_option(
-	"--host", dest="host", help="Specifies what SMTP server to use. Default: " + DEFAULT_HOST
+	"--host", dest="host", help="Specifies what SMTP server to use. Default: " + DEFAULT_HOST, default=DEFAULT_HOST
+)
+parser.add_option(
+	"-u", "--user", dest="user", help="Specifies a username to authenticate with."
+)
+parser.add_option(
+	"-p", "--password", dest="password", help="Specifies a password to authenticate with."
+)
+parser.add_option(
+	"--port", dest="port", help="Specifies what SMTP port to use. Default: 25.", default=25
 )
 parser.add_option(
 	"--html", dest="html", help="Specifies an HTML message to send along with the text."
@@ -121,6 +130,8 @@ for filename in opts.attach:
 	outer.attach(msg)
 
 s  = smtplib.SMTP()
-s.connect(opts.host)
+s.connect(opts.host,opts.port)
+if opts.user:
+	s.login(opts.user, opts.password)
 s.sendmail(opts.from_addr, to_list + opts.bcc, outer.as_string())
 s.quit()
